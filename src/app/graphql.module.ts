@@ -8,6 +8,7 @@ import {
   InMemoryCache
 } from 'apollo-cache-inmemory';
 
+import { environment } from '../environments/environment';
 import { introspectionQueryResultData } from './fragmentTypes';
 
 const uri = 'https://api.github.com/graphql';
@@ -17,7 +18,7 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 
 export function createApollo(httpLink: HttpLink) {
   const http = httpLink.create({ uri });
-  const authToken = process.env.githubOauth;
+  const authToken = environment.githubOauth;
   const auth = setContext((_, { headers }) => {
     return {
       headers: new HttpHeaders().set('Authorization', `Bearer ${authToken}`)
