@@ -14,7 +14,7 @@
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client-and-server-bundles": "ng build --prod && ng run this-dot-exercise:server:production",
-    "heroku-postbuild": "ng run build:ssr"
+    "heroku-postbuild": "npm run build:ssr"
   },
   "engines": {
     "node": "11.10.1",
