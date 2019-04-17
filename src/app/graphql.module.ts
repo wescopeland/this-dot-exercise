@@ -17,7 +17,7 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 
 export function createApollo(httpLink: HttpLink) {
   const http = httpLink.create({ uri });
-  const authToken = '9fbc54a1baf7ad195fca8496ef3c9c9739a2803f';
+  const authToken = process.env.githubOauth;
   const auth = setContext((_, { headers }) => {
     return {
       headers: new HttpHeaders().set('Authorization', `Bearer ${authToken}`)

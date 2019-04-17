@@ -1,73 +1,71 @@
-<div class="tde-github-user-card">
-  <div class="row">
-    <div class="col-1 pr-0 d-none d-md-block">
-      <img class="mt-1" [src]="githubUser.avatarUrl" alt="avatar">
+<div class="row tde-github-user-card">
+  <div class="col-1 pr-0 d-none d-md-block">
+    <img class="mt-1" [src]="githubUser.avatarUrl" alt="avatar">
+  </div>
+  <div class="col-md-9 col-sm-6">
+    <div class="row ml-0">
+      <a 
+        [href]="githubUser.profileUrl" 
+        target="_blank" 
+        rel="noopener" 
+        class="tde-github-user-card__username mr-3">
+        {{ githubUser.userName }}
+      </a>
+      <span class="tde-github-user-card__fullname">{{ githubUser.fullName }}</span>
     </div>
-    <div class="col-md-9 col-sm-6">
-      <div class="row ml-0">
-        <a 
-          [href]="githubUser.profileUrl" 
-          target="_blank" 
-          rel="noopener" 
-          class="tde-github-user-card__username mr-3">
-          {{ githubUser.userName }}
-        </a>
-        <span class="tde-github-user-card__fullname">{{ githubUser.fullName }}</span>
-      </div>
-      <div class="row ml-0">
-        <span class="mb-1">
-          {{ githubUser.bio }}
-        </span>
-      </div>
-      <div class="row ml-0">
-        <tde-github-user-card-datapoint
-          *ngIf="githubUser.location"
-          class="col-md p-0"
-          icon="place"
-          [text]="githubUser.location">
-        </tde-github-user-card-datapoint>
-      </div>
-      <div class="row ml-0">
-        <tde-github-user-card-datapoint
-          *ngIf="githubUser.email"
-          class="col-md p-0"
-          hyperlink="{{ 'mailto:' + githubUser.email }}"
-          icon="mail"
-          [text]="githubUser.email">
-        </tde-github-user-card-datapoint>
-      </div>
-      <div class="row ml-0">
-        <tde-github-user-card-datapoint
-          *ngIf="githubUser.createdAt"
-          class="col-md p-0"
-          icon="calendar_today"
-          text="{{ 'Joined ' + (githubUser.createdAt | date) }}">
-        </tde-github-user-card-datapoint>
-      </div>
-      <div class="row ml-0">
-        <tde-github-user-card-datapoint
-          *ngIf="githubUser.repoCount"
-          class="col-md p-0"
-          icon="book"
-          text="{{ githubUser.repoCount | i18nPlural: pluralMapping.repo }}">
-        </tde-github-user-card-datapoint>
-      </div>
-      <div class="row ml-0">
-        <tde-github-user-card-datapoint
-          *ngIf="githubUser.starCount"
-          class="col-md p-0"
-          icon="star"
-          text="{{ githubUser.starCount | i18nPlural: pluralMapping.star }}">
-        </tde-github-user-card-datapoint>
-      </div>
-      <div class="row ml-0">
-        <tde-github-user-card-datapoint
-          *ngIf="githubUser.followerCount"
-          class="col-md p-0"
-          icon="group"
-          text="{{ githubUser.followerCount | i18nPlural: pluralMapping.follower }}">
-        </tde-github-user-card-datapoint>
-      </div>
+    <div class="row ml-0">
+      <span class="mb-1">
+        {{ githubUser.bio }}
+      </span>
+    </div>
+    <div class="row ml-0">
+      <tde-github-user-card-datapoint
+        *ngIf="githubUser.location"
+        class="col-md p-0"
+        icon="place"
+        [text]="githubUser.location">
+      </tde-github-user-card-datapoint>
+    </div>
+    <div class="row ml-0">
+      <tde-github-user-card-datapoint
+        *ngIf="githubUser.email"
+        class="col-md p-0"
+        hyperlink="{{ 'mailto:' + githubUser.email }}"
+        icon="mail"
+        [text]="githubUser.email">
+      </tde-github-user-card-datapoint>
+    </div>
+    <div class="row ml-0">
+      <tde-github-user-card-datapoint
+        *ngIf="githubUser.createdAt"
+        class="col-md p-0"
+        icon="calendar_today"
+        text="{{ 'Joined ' + (githubUser.createdAt | date) }}">
+      </tde-github-user-card-datapoint>
+    </div>
+    <div class="row ml-0">
+      <tde-github-user-card-datapoint
+        *ngIf="githubUser.repoCount"
+        class="col-md p-0"
+        icon="book"
+        text="{{ githubUser.repoCount | i18nPlural: pluralMapping.repo }}">
+      </tde-github-user-card-datapoint>
+    </div>
+    <div class="row ml-0">
+      <tde-github-user-card-datapoint
+        *ngIf="githubUser.starCount"
+        class="col-md p-0"
+        icon="star"
+        text="{{ githubUser.starCount | i18nPlural: pluralMapping.star }}">
+      </tde-github-user-card-datapoint>
+    </div>
+    <div class="row ml-0">
+      <tde-github-user-card-datapoint
+        *ngIf="githubUser.followerCount"
+        class="col-md p-0"
+        icon="group"
+        text="{{ githubUser.followerCount | i18nPlural: pluralMapping.follower }}">
+      </tde-github-user-card-datapoint>
     </div>
   </div>
 </div>
