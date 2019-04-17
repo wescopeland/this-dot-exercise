@@ -13,5 +13,14 @@ platformBrowserDynamic()
   .bootstrapModule(AppModule)
   .catch(err => console.error(err));
 
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .then(() => {
+    if ('serviceWorker' in navigator && environment.production) {
+      navigator.serviceWorker.register('/ngsw-worker.js');
+    }
+  })
+  .catch(err => console.log(err));
+
 console.log('Made with <3 - Wes Copeland, Apr 2019');
 console.log('https://github.com/wescopeland/this-dot-exercise');

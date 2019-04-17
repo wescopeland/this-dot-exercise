@@ -10,6 +10,7 @@ import { SharedModule } from '@shared/shared.module';
 import { UserSearchModule } from './user-search/user-search.module';
 import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +22,8 @@ import { GraphQLModule } from './graphql.module';
     [environment.production ? [] : AkitaNgDevtools.forRoot()],
     CoreModule,
     SharedModule,
-    UserSearchModule
+    UserSearchModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

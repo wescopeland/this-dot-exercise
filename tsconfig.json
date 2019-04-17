@@ -1,4 +1,7 @@
 {
+  "angularCompilerOptions": {
+    "entryModule": "./app/app.module#AppModule"
+  },
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
