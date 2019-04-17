@@ -1,0 +1,21 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$tde-app-primary: mat-palette($mat-red, A100);
+$tde-app-accent: mat-palette($mat-deep-purple, 100);
+$tde-app-warn: mat-palette($mat-red);
+$tde-app-background-color: map_get($mat-blue-grey, 200);
+
+$tde-app-theme: mat-light-theme(
+  $tde-app-primary,
+  $tde-app-accent,
+  $tde-app-warn
+);
+
+// Dark mode is not supported. Hardcode the background color.
+body,
+.mat-paginator-outer-container {
+  background-color: #f1f2f3;
+}
+
+@include angular-material-theme($tde-app-theme);

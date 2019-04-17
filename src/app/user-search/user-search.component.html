@@ -1,0 +1,56 @@
+<div class="tde-user-search__viewport">
+  <div class="container">
+
+    <div class="row">
+      <div class="col">
+        <tde-findy-bar 
+          #findy
+          placeholder="Search for GitHub users"
+          [sampleSearch]="sampleSearch"
+          (findyValueChange)="handleFindyValueChange($event)">
+        </tde-findy-bar>
+      </div>
+    </div>
+
+    <div *ngIf="users$ | async as users">
+      <div *ngIf="!users.length && totalUserCount === null">
+        <div class="row">
+          <div class="col">
+            <tde-empty-state 
+              buttonLabel="Try a sample search" 
+              (callToActionClick)="handleCallToActionClick()">
+              <div main>Let's find some users!</div>
+              <div sub>Search for GitHub users and they'll appear here.</div>
+            </tde-empty-state>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="!users.length && totalUserCount === 0">
+        <div class="row">
+          <div class="col">
+            <tde-empty-state
+              buttonLabel="Try a sample search"
+              (callToActionClick)="handleCallToActionClick()">
+              <div main>No users were found for this search.</div>
+              <div sub>Why not try a sample search to get started?</div>
+            </tde-empty-state>
+          </div>
+        </div>
+      </div>
+  
+      <div *ngIf="users.length">
+        <mat-paginator 
+          pageSize="10"
+          [hidePageSize]="true"
+          [length]="totalUserCount"
+          (page)="handlePage($event)">
+        </mat-paginator>
+        <tde-github-user-card-list [githubUsers]="users"></tde-github-user-card-list>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<tde-corner-loader [isShowing]="(isLoading$ | async)"></tde-corner-loader>

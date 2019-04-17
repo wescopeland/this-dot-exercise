@@ -1,0 +1,39 @@
+.tde-corner-loader__spinner {
+  margin: 0 auto;
+}
+
+.tde-corner-loader__card {
+  display: inline-block;
+  position: fixed;
+  bottom: 48px;
+  right: 32px;
+  background-color: #404040;
+  color: white;
+  line-height: 20px;
+  margin-top: 8px;
+  padding-top: 16px;
+  padding-bottom: 10px;
+  padding-left: 24px;
+  padding-right: 24px;
+  white-space: nowrap;
+  z-index: 50;
+  border-radius: 2px;
+
+  .mat-progress-spinner circle,
+  .mat-spinner circle {
+    stroke: white !important;
+  }
+
+  .mat-spinner {
+    display: inline-block;
+  }
+
+  p {
+    display: inline-block;
+    margin-bottom: 0;
+    padding-left: 16px;
+    line-height: 40px;
+    margin-top: -20px;
+    vertical-align: middle;
+  }
+}

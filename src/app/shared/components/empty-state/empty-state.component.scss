@@ -1,0 +1,23 @@
+.tde-empty-state {
+  margin-top: 78px;
+  text-align: center;
+
+  .tde-empty-state__main-text {
+    font-size: 16px;
+    padding-bottom: 8px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .tde-empty-state__sub-text {
+    font-size: 12px;
+    padding-bottom: 16px;
+  }
+
+  img {
+    margin-bottom: 32px;
+  }
+
+  button {
+    text-transform: uppercase;
+  }
+}

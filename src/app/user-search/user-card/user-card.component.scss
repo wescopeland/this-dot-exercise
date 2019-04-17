@@ -1,0 +1,48 @@
+.tde-github-user-card {
+  background-color: white;
+  min-height: 112px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 12px 16px;
+
+  img {
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  .tde-github-user-card__username {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .tde-github-user-card__fullname {
+    font-size: 20px;
+  }
+
+  .tde-github-user-card__location,
+  .tde-github-user-card__email,
+  .tde-github-user-card__member-since {
+    .mat-icon {
+      vertical-align: bottom;
+      color: rgba(0, 0, 0, 0.54);
+    }
+
+    span,
+    a {
+      font-size: 14px;
+    }
+  }
+
+  .tde-github-user-card__clickable-stat {
+    padding-right: 8px;
+
+    .mat-icon {
+      vertical-align: bottom;
+      color: rgba(0, 0, 0, 0.54);
+    }
+
+    span {
+      margin-right: 8px;
+      font-size: 14px;
+    }
+  }
+}

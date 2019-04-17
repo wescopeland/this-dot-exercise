@@ -1,0 +1,41 @@
+.tde-findy-bar {
+  height: 58px;
+  box-sizing: border-box;
+  padding: 0 24px;
+  background-color: white;
+  border-radius: 2px;
+  width: 100%;
+  margin-bottom: 16px;
+  transition: box-shadow 175ms ease;
+
+  .mat-icon {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    user-select: none;
+  }
+
+  input {
+    font: 400 16px/24px 'Roboto', 'Noto Sans', 'Noto Sans JP', sans-serif;
+    color: rgba(0, 0, 0, 0.87);
+    height: 100%;
+    width: calc(100% - 80px);
+    border: none;
+    text-overflow: ellipsis;
+    outline: none;
+    padding: 0 8px;
+    background: transparent;
+  }
+
+  input::placeholder,
+  input::-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.57);
+  }
+
+  .tde-findy-bar__clear {
+    mat-icon {
+      line-height: 36px;
+    }
+  }
+}

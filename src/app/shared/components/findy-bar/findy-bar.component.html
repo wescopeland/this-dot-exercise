@@ -1,0 +1,20 @@
+<div
+  class="tde-findy-bar"
+  [ngClass]="{ 'mat-elevation-z2': !isFocused, 'mat-elevation-z4': isFocused }">
+
+  <mat-icon>search</mat-icon>
+  <input
+    placeholder="{{ placeholder || 'Search' }}"
+    [ngModel]="findyValue"
+    (blur)="isFocused = false"
+    (focus)="isFocused = true"
+    (ngModelChange)="handleNgModelChange($event)">
+  <button 
+    *ngIf="findyValue"
+    class="tde-findy-bar__clear" 
+    mat-icon-button 
+    (click)="handleClearClick()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+</div>

@@ -1,0 +1,11 @@
+<div class="tde-github-user-card-datapoint">
+  <mat-icon [ngClass]="{ 'mr-1': !hyperlink }">{{ icon }}</mat-icon>
+  <span *ngIf="!hyperlink">{{ text }}</span>
+  <a 
+    *ngIf="hyperlink"
+    target="_blank"
+    rel="noopener"
+    [href]="hyperlink">
+    {{ text }}
+  </a>
+</div>

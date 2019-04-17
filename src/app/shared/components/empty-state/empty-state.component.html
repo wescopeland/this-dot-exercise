@@ -1,0 +1,13 @@
+<div class="tde-empty-state">
+  <img src="assets/abstract.svg">
+
+  <div class="tde-empty-state__main-text">
+    <ng-content select="[main]"></ng-content>
+  </div>
+
+  <div class="tde-empty-state__sub-text">
+    <ng-content select="[sub]"></ng-content>
+  </div>
+
+  <button mat-button color="primary" (click)="handleCallToActionClick()">{{ buttonLabel }}</button>
+</div>
