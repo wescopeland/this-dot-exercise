@@ -9,6 +9,24 @@ exports[`Component: NavbarComponent should render the navbar 1`] = `
     <span>
       This.Exercise
     </span>
+    <span
+      class="tde-navbar__spacer"
+    />
+    <a
+      href="https://github.com/wescopeland/this-dot-exercise"
+      mat-button=""
+      rel="noopener"
+      target="_blank"
+    >
+      <mat-icon
+        aria-hidden="true"
+        class="mat-icon notranslate"
+        role="img"
+      >
+        open_in_new
+      </mat-icon>
+       GitHub Repo 
+    </a>
   </mat-toolbar>
 </tde-navbar>
 `;

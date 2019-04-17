@@ -1,6 +1,6 @@
 import { Spectator } from '@netbasal/spectator';
 import { createTestComponentFactory } from '@netbasal/spectator/jest';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatToolbarModule, MatIconModule } from '@angular/material';
 
 import { NavbarComponent } from './navbar.component';
 
@@ -10,7 +10,7 @@ describe('Component: NavbarComponent', () => {
     component: NavbarComponent,
     detectChanges: false,
     declarations: [],
-    imports: [MatToolbarModule],
+    imports: [MatToolbarModule, MatIconModule],
     componentProviders: []
   });
 
