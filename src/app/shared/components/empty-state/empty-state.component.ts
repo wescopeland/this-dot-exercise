@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 })
 export class EmptyStateComponent implements OnInit {
   @Input() buttonLabel: string;
-  @Output() callToActionClick = new EventEmitter<void>();
+  @Output() readonly callToActionClick = new EventEmitter<void>();
 
   constructor() {}
 

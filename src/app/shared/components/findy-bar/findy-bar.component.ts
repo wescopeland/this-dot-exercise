@@ -15,7 +15,7 @@ import {
 export class FindyBarComponent implements OnInit, OnChanges {
   @Input() placeholder: string;
   @Input() sampleSearch: string;
-  @Output() findyValueChange = new EventEmitter<string>();
+  @Output() readonly findyValueChange = new EventEmitter<string>();
 
   public findyValue: string;
   public isFocused = false;
