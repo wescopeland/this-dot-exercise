@@ -1,4 +1,8 @@
 .tde-navbar {
   background-color: #e84d4a;
   color: white;
+
+  .tde-navbar__spacer {
+    flex: 1 1 auto;
+  }
 }
