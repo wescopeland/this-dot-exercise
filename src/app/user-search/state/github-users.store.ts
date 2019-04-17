@@ -5,19 +5,19 @@ import { GithubUser } from './models/github-user.model';
 
 export interface GithubUsersState extends EntityState<GithubUser> {
   ui: {
-    userCount: number;
-    hasNextPage: boolean;
-    currentPageIndex: number;
     cachedCursors: string[];
+    currentPageIndex: number;
+    hasNextPage: boolean;
+    userCount: number;
   };
 }
 
 const initialState = {
   ui: {
-    userCount: null,
-    hasNextPage: null,
+    cachedCursors: [null],
     currentPageIndex: -1,
-    cachedCursors: [null]
+    hasNextPage: null,
+    userCount: null
   }
 };
 

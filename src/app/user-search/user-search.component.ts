@@ -1,6 +1,7 @@
 import {
   Component,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   OnInit,
   OnDestroy
 } from '@angular/core';
@@ -25,6 +26,7 @@ export class UserSearchComponent implements OnInit, OnDestroy {
   public users$: Observable<GithubUser[]>;
   private _findyBarSubject = new Subject<string>();
   private _findyBarValue: string;
+  private _sampleIterator = 0;
 
   constructor(
     private _query: GithubUsersQuery,
@@ -42,14 +44,19 @@ export class UserSearchComponent implements OnInit, OnDestroy {
   ngOnDestroy() {}
 
   handleCallToActionClick() {
-    const randomNumber = Math.floor(Math.random() * 3) + 1;
-
-    if (randomNumber === 1) {
-      this.sampleSearch = 'evan you';
-    } else if (randomNumber === 2) {
+    // Change the value so it's picked up by the findy bar's ngOnChanges.
+    if (this._sampleIterator === 0) {
       this.sampleSearch = 'this dot';
-    } else if (randomNumber === 3) {
+    } else if (this._sampleIterator === 1) {
+      this.sampleSearch = 'evan you';
+    } else if (this._sampleIterator === 2) {
       this.sampleSearch = 'datorama';
+    }
+
+    if (this._sampleIterator < 2) {
+      this._sampleIterator += 1;
+    } else {
+      this._sampleIterator = 0;
     }
   }
 

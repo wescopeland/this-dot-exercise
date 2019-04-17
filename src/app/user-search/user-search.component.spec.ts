@@ -66,18 +66,18 @@ describe('Component: UserSearchComponent', () => {
     expect(initFindyBarSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('can initiate a random sample search', () => {
-    Math.floor = jest.fn().mockReturnValue(0);
-    spectator.component.handleCallToActionClick();
-    expect(spectator.component.sampleSearch).toEqual('evan you');
-
-    Math.floor = jest.fn().mockReturnValue(1);
+  it('can initiate a sample search based on an iterator value', () => {
     spectator.component.handleCallToActionClick();
     expect(spectator.component.sampleSearch).toEqual('this dot');
 
-    Math.floor = jest.fn().mockReturnValue(2);
+    spectator.component.handleCallToActionClick();
+    expect(spectator.component.sampleSearch).toEqual('evan you');
+
     spectator.component.handleCallToActionClick();
     expect(spectator.component.sampleSearch).toEqual('datorama');
+
+    spectator.component.handleCallToActionClick();
+    expect(spectator.component.sampleSearch).toEqual('this dot');
   });
 
   it('notifies the findy bar observable when the findy bar value changes', () => {

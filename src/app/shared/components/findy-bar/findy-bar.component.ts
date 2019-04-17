@@ -25,7 +25,7 @@ export class FindyBarComponent implements OnInit, OnChanges {
   ngOnInit() {}
 
   ngOnChanges(e) {
-    if (!e.sampleSearch.firstChange && e.sampleSearch) {
+    if (!e.sampleSearch.firstChange && e.sampleSearch.currentValue) {
       this.handleNgModelChange(this.sampleSearch);
     }
   }
