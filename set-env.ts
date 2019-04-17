@@ -28,5 +28,6 @@ writeFile(targetPath, envConfigFile, function(err) {
     console.log(err);
   }
 
+  console.log(`oauth token ${process.env.githubOauth}`);
   console.log(`Output generated at ${targetPath}`);
 });
