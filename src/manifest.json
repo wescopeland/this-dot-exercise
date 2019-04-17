@@ -1,7 +1,7 @@
 {
   "name": "this-dot-exercise",
   "short_name": "This.Exercise",
-  "theme_color": "#eb5a57",
+  "theme_color": "#e84d4a",
   "background_color": "#f1f2f3",
   "display": "standalone",
   "scope": "/",

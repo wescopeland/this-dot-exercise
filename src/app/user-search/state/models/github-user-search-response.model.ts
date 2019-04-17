@@ -24,3 +24,34 @@ export interface GithubUserSearchResponse {
     };
   };
 }
+
+export let mockGithubUserSearchResponse = {
+  data: {
+    search: {
+      edges: [
+        {
+          node: {
+            avatarUrl: 'https://abc.xyz',
+            bio: 'this is a mock bio',
+            createdAt: '09-14-1990',
+            followers: { totalCount: 42 },
+            id: 'asdfasdfasdfadf',
+            location: 'Little Rock, AR',
+            email: 'hello@mock.com',
+            login: 'mockuser',
+            name: 'mock user',
+            repositories: { totalCount: 42 },
+            starredRepositories: { totalCount: 42 },
+            url: 'https://abc.xyz'
+          }
+        }
+      ],
+      userCount: 1,
+      pageInfo: {
+        startCursor: 'a',
+        hasNextPage: false,
+        endCursor: 'b'
+      }
+    }
+  }
+};

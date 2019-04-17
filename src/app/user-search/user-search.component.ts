@@ -64,7 +64,7 @@ export class UserSearchComponent implements OnInit, OnDestroy {
   initializeFindyBarSubscription(): void {
     this._findyBarSubject
       .pipe(
-        debounceTime(300),
+        debounceTime(350),
         untilDestroyed(this)
       )
       .subscribe(findyBarValue => {

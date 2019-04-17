@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: NavbarComponent should render the navbar 1`] = `
+<tde-navbar>
+  <mat-toolbar
+    class="tde-navbar mat-elevation-z4 mat-toolbar"
+    color="primary"
+  >
+    <span>
+      This.Exercise
+    </span>
+  </mat-toolbar>
+</tde-navbar>
+`;

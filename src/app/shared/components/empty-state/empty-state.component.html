@@ -1,5 +1,5 @@
 <div class="tde-empty-state">
-  <img src="assets/abstract.svg">
+  <img src="assets/abstract.svg" alt="empty state abtract image">
 
   <div class="tde-empty-state__main-text">
     <ng-content select="[main]"></ng-content>
@@ -9,5 +9,7 @@
     <ng-content select="[sub]"></ng-content>
   </div>
 
-  <button mat-button color="primary" (click)="handleCallToActionClick()">{{ buttonLabel }}</button>
+  <button mat-button color="primary" (click)="handleCallToActionClick()">
+    {{ buttonLabel || "Continue" }}
+  </button>
 </div>

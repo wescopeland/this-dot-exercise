@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: FooterComponent should render the footer 1`] = `
+<tde-footer>
+  <footer
+    class="tde-footer"
+  >
+    <div
+      class="container-fluid"
+    />
+  </footer>
+</tde-footer>
+`;

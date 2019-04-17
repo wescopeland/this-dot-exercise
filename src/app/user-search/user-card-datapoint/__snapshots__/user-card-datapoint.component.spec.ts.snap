@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: UserCardDatapointComponent can render a datapoint with a hyperlink 1`] = `
+<tde-github-user-card-datapoint
+  hyperlink={[Function String]}
+  icon={[Function String]}
+  text={[Function String]}
+>
+  <div
+    class="tde-github-user-card-datapoint"
+  >
+    <mat-icon
+      aria-hidden="true"
+      class="mat-icon notranslate material-icons mat-icon-no-color"
+      ng-reflect-ng-class="[object Object]"
+      role="img"
+    >
+      close
+    </mat-icon>
+    
+    
+    <a
+      href="https://abc.xyz"
+      rel="noopener"
+      target="_blank"
+    >
+       hyperlink 
+    </a>
+  </div>
+</tde-github-user-card-datapoint>
+`;
+
+exports[`Component: UserCardDatapointComponent can render a datapoint without a hyperlink 1`] = `
+<tde-github-user-card-datapoint
+  icon={[Function String]}
+  text={[Function String]}
+>
+  <div
+    class="tde-github-user-card-datapoint"
+  >
+    <mat-icon
+      aria-hidden="true"
+      class="mat-icon notranslate mr-1 material-icons mat-icon-no-color"
+      ng-reflect-ng-class="[object Object]"
+      role="img"
+    >
+      close
+    </mat-icon>
+    
+    <span>
+      no hyperlink
+    </span>
+    
+  </div>
+</tde-github-user-card-datapoint>
+`;

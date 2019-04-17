@@ -1,4 +1,4 @@
-<div class="mb-5 mat-elevation-z4">
+<div *ngIf="githubUsers" class="mb-5 mat-elevation-z4">
   <div *ngFor="let user of githubUsers; trackBy: trackByFn" >
     <tde-github-user-card [githubUser]="user"></tde-github-user-card>
   </div>

@@ -21,7 +21,7 @@ export let mockGithubUser: GithubUser = {
   email: 'mock@user.com',
   bio: 'I am a mock user 🤖',
   location: 'Little Rock, Arkansas',
-  createdAt: '2010-1-04T10:11:44Z',
+  createdAt: 'Wed Apr 17 2019 12:09:29 GMT-0400 (Eastern Daylight Time)',
   followerCount: 100,
   repoCount: 50,
   starCount: 200
