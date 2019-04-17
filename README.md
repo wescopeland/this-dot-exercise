@@ -13,8 +13,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - 💪 It's a PWA
 - 💪💪 Deployed on Heroku w/ Angular Universal for SSR and faster first contentful paint
 - 96/100 Lighthouse performance score
-- GraphQL was used in favor of the REST API to meet the project requirements with the fewest possible API calls. This is the first time I've ever used GraphQL in any context 😱 ~ but I really enjoyed the challenge and learning experience.
-- Jest is favored over Jasmine for unit testing
+- GraphQL was used in favor of the REST API to meet the project requirements with the fewest possible API calls. This is the first time I've ever used GraphQL and Apollo in any context 😱 ~ but I really enjoyed the challenge and learning experience.
+- Jest is favored over Jasmine+Karma for unit testing
 - [Spectator](https://github.com/NetanelBasal/spectator) is used as syntactic sugar over TestBed
 - I first drew low-fidelity ideas on paper, then created highish-fidelity wires in Figma which can be found [here](https://www.figma.com/file/EXE9MXuA7lxVqDShUwUd9AmG/This-Dot-Exercise?node-id=0%3A1)
 
