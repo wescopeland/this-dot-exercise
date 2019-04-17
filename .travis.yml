@@ -14,3 +14,4 @@ install:
 
 script:
   - npm run test:ci
+  - npm run test:coverage
