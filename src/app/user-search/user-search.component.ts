@@ -43,7 +43,7 @@ export class UserSearchComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {}
 
-  handleCallToActionClick() {
+  handleCallToActionClick(): void {
     // Change the value so it's picked up by the findy bar's ngOnChanges.
     if (this._sampleIterator === 0) {
       this.sampleSearch = 'this dot';
@@ -60,11 +60,11 @@ export class UserSearchComponent implements OnInit, OnDestroy {
     }
   }
 
-  handleFindyValueChange(e: string) {
+  handleFindyValueChange(e: string): void {
     this._findyBarSubject.next(e);
   }
 
-  handlePage(e: PageEvent) {
+  handlePage(e: PageEvent): void {
     this._service.getUsersAtPageIndex(this._findyBarValue, e.pageIndex, false);
   }
 

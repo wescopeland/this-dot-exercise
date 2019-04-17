@@ -34,7 +34,7 @@ export class FindyBarComponent implements OnInit, OnChanges {
     this.handleNgModelChange(null);
   }
 
-  handleNgModelChange(e: string) {
+  handleNgModelChange(e: string): void {
     this.findyValue = e;
     this.findyValueChange.emit(this.findyValue);
   }
