@@ -2,26 +2,22 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.4.
 
+[![Build Status](https://travis-ci.com/wescopeland/this-dot-exercise.svg?branch=master)](https://travis-ci.com/wescopeland/this-dot-exercise)
+[![Coverage Status](https://coveralls.io/repos/github/wescopeland/this-dot-exercise/badge.svg?branch=master)](https://coveralls.io/github/wescopeland/this-dot-exercise?branch=master)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 ## Development server
+
+**You will need to add your GitHub OAuth key to `src/environments/environment.ts`.**
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Production build
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+There is a `heroku-postbuild` task that populates the OAuth key from process.env. This key only has read privileges.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+`npm run build:ssr` builds the project. `npm run start` can then be used to start a server powered by Express and Angular Universal.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `ng test` to execute the unit tests via Jest.
