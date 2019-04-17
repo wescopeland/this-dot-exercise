@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run serve:ssr",
     "build": "ng build",
     "test": "ng test",
     "test:ci": "ng test --ci --run-in-band",
@@ -13,9 +13,14 @@
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --prod && node compress.js && ng run this-dot-exercise:server:production"
+    "build:client-and-server-bundles": "ng build --prod && ng run this-dot-exercise:server:production",
+    "heroku-postbuild": "ng run build:ssr"
   },
-  "private": true,
+  "engines": {
+    "node": "11.10.1",
+    "npm": "6.9.0"
+  },
+  "private": false,
   "dependencies": {
     "@angular/animations": "^7.2.13",
     "@angular/cdk": "^7.3.7",
@@ -64,7 +69,7 @@
     "@datorama/akita-ngdevtools": "^1.0.4",
     "@netbasal/spectator": "^3.6.1",
     "@types/jest": "^24.0.11",
-    "@types/node": "~8.9.4",
+    "@types/node": "^8.9.5",
     "coveralls": "^3.0.3",
     "jest": "^24.7.1",
     "jest-preset-angular": "^7.1.0",
