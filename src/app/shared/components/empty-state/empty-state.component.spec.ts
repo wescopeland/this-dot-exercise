@@ -22,15 +22,24 @@ describe('Component: EmptyStateComponent', () => {
     expect(spectator.component).toBeDefined();
   });
 
-  it('renders a custom label on the call to action button', () => {
+  it('renders a call to action button if a label is passed in', () => {
     spectator.component.buttonLabel = 'test label';
     spectator.detectChanges();
 
+    expect(spectator.query('button')).toBeTruthy();
     expect(spectator.query('button')).toHaveText('test label');
+
+    spectator.component.buttonLabel = null;
+    spectator.detectChanges();
+
+    expect(spectator.query('button')).not.toBeTruthy();
   });
 
   it('calls an event handler function when the call to action button is clicked', () => {
     const handlerSpy = spyOn(spectator.component, 'handleCallToActionClick');
+
+    spectator.component.buttonLabel = 'test label';
+    spectator.detectChanges();
 
     spectator.dispatchMouseEvent(spectator.query('button'), 'click');
     expect(handlerSpy).toHaveBeenCalledTimes(1);
