@@ -12,6 +12,7 @@ import { untilDestroyed } from 'ngx-take-until-destroy';
 
 import { GithubUsersQuery, GithubUsersService } from './state';
 import { GithubUser } from './state/models/github-user.model';
+import { NotificationService } from '@shared/providers';
 
 @Component({
   selector: 'tde-user-search',
@@ -31,6 +32,7 @@ export class UserSearchComponent implements OnInit, OnDestroy {
 
   constructor(
     private _network: Network,
+    private _notification: NotificationService,
     private _query: GithubUsersQuery,
     private _service: GithubUsersService
   ) {}
@@ -77,10 +79,22 @@ export class UserSearchComponent implements OnInit, OnDestroy {
         debounceTime(350),
         untilDestroyed(this)
       )
-      .subscribe(findyBarValue => {
+      .subscribe(async findyBarValue => {
         if (findyBarValue && findyBarValue.length >= 3) {
           this._findyBarValue = findyBarValue;
-          this._service.getUsersAtPageIndex(this._findyBarValue, 0, true);
+
+          try {
+            await this._service.getUsersAtPageIndex(
+              this._findyBarValue,
+              0,
+              true
+            );
+          } catch (e) {
+            console.error(e);
+            this._notification.notify(
+              'There was a problem loading users from GitHub. Please try again later.'
+            );
+          }
         } else {
           this._service.resetState();
         }

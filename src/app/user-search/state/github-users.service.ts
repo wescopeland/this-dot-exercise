@@ -51,23 +51,7 @@ export class GithubUsersService {
       > = await this._dataService.getUsers(search, cursor).toPromise();
 
       if (oc(response).data.search.edges()) {
-        const returnedUsers = response.data.search.edges.map(
-          edge =>
-            <GithubUser>{
-              id: edge.node.id,
-              userName: edge.node.login,
-              fullName: edge.node.name,
-              profileUrl: edge.node.url,
-              email: edge.node.email,
-              bio: edge.node.bio,
-              location: edge.node.location,
-              avatarUrl: edge.node.avatarUrl,
-              createdAt: edge.node.createdAt,
-              followerCount: oc(edge).node.followers.totalCount(null),
-              repoCount: oc(edge).node.repositories.totalCount(null),
-              starCount: oc(edge).node.starredRepositories.totalCount(null)
-            }
-        );
+        const mappedUsers: GithubUser[] = this.mapSearchResponseUsers(response);
 
         // When the findy bar passes in a new value, start fresh.
         if (isNewSearch) {
@@ -76,14 +60,43 @@ export class GithubUsersService {
           this._store.remove();
         }
 
-        this._store.add(returnedUsers);
+        this._store.add(mappedUsers);
         this.updateUiCache(response.data.search);
+
+        this._store.setLoading(false);
       }
     } catch (e) {
-      console.error(e);
+      this._store.setLoading(false);
+      throw new Error(e);
+    }
+  }
+
+  mapSearchResponseUsers(
+    response: ApolloQueryResult<GithubUserSearchResponse>
+  ): GithubUser[] {
+    if (oc(response).data.search.edges()) {
+      const mappedUsers = response.data.search.edges.map(
+        edge =>
+          <GithubUser>{
+            id: edge.node.id,
+            userName: edge.node.login,
+            fullName: edge.node.name,
+            profileUrl: edge.node.url,
+            email: edge.node.email,
+            bio: edge.node.bio,
+            location: edge.node.location,
+            avatarUrl: edge.node.avatarUrl,
+            createdAt: edge.node.createdAt,
+            followerCount: oc(edge).node.followers.totalCount(null),
+            repoCount: oc(edge).node.repositories.totalCount(null),
+            starCount: oc(edge).node.starredRepositories.totalCount(null)
+          }
+      );
+
+      return mappedUsers;
     }
 
-    this._store.setLoading(false);
+    return [];
   }
 
   resetState(): void {

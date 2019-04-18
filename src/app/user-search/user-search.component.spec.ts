@@ -14,6 +14,7 @@ import {
   EmptyStateComponent,
   FindyBarComponent
 } from '@shared/components';
+import { NotificationService } from '@shared/providers';
 import { UserCardListComponent } from './user-card-list/user-card-list.component';
 import { GithubUsersQuery, GithubUsersService } from './state';
 import { tick } from '@angular/core/testing';
@@ -32,7 +33,8 @@ describe('Component: UserSearchComponent', () => {
     imports: [MatPaginatorModule],
     providers: [
       mockProvider(GithubUsersQuery),
-      mockProvider(GithubUsersService)
+      mockProvider(GithubUsersService),
+      mockProvider(NotificationService)
     ]
   });
 
