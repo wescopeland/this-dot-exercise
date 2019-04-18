@@ -43,6 +43,7 @@
         <div *ngIf="users.length">
           <mat-paginator 
             pageSize="10"
+            [disabled]="(isLoading$ | async)"
             [hidePageSize]="true"
             [length]="totalUserCount"
             (page)="handlePage($event)">
