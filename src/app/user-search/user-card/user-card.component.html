@@ -47,6 +47,7 @@
       <tde-github-user-card-datapoint
         *ngIf="githubUser.repoCount"
         class="col-md p-0"
+        hyperlink="{{ 'https://github.com/' + githubUser.userName + '?tab=repositories' }}"
         icon="book"
         text="{{ githubUser.repoCount | i18nPlural: pluralMapping.repo }}">
       </tde-github-user-card-datapoint>
@@ -55,6 +56,7 @@
       <tde-github-user-card-datapoint
         *ngIf="githubUser.starCount"
         class="col-md p-0"
+        hyperlink="{{ 'https://github.com/' + githubUser.userName + '?tab=stars' }}"
         icon="star"
         text="{{ githubUser.starCount | i18nPlural: pluralMapping.star }}">
       </tde-github-user-card-datapoint>
@@ -63,6 +65,7 @@
       <tde-github-user-card-datapoint
         *ngIf="githubUser.followerCount"
         class="col-md p-0"
+        hyperlink="{{ 'https://github.com/' + githubUser.userName + '?tab=followers' }}"
         icon="group"
         text="{{ githubUser.followerCount | i18nPlural: pluralMapping.follower }}">
       </tde-github-user-card-datapoint>
