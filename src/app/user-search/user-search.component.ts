@@ -83,6 +83,8 @@ export class UserSearchComponent implements OnInit, OnDestroy {
         if (findyBarValue && findyBarValue.length >= 3) {
           this._findyBarValue = findyBarValue;
 
+          // When we have a value from the findy bar,
+          // start querying at page index 0 for users from GitHub.
           try {
             await this._service.getUsersAtPageIndex(
               this._findyBarValue,
